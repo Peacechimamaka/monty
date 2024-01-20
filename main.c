@@ -1,36 +1,29 @@
-#include "monty.h"
+#include <monty.h>
 
 /**
- * main - Entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: Always 0
+ *
+ *
+ *
  */
 
-int main(int argc, char *argv[])
+int main (int ac char *av[])
 {
-	char buffer[2];
-	FILE *myFile;
+	char *output, *code, *input = NULL;
+	FILE *mfile;
+	stack_t *stack = NULL;
+	size_t size = 0;
+	size_t rd;
+	unsigned int count = 0;
 
-	int num;
-
-	myFile = fopen(argv[1], "r");
-
-
-	while (fgets(buffer, 2, myFile) != NULL)
+	if (ac != 2)
 	{
-		num = (atoi(buffer));
-		if (num != 0)
-			push(num);
-		/*printf("%s", buffer);*/
+		fprintf(stderr, "USAGE: monty file\n");
+		exit (EXIT_FAILURE);
 	}
 
-	pall();
-
-	fclose(myFile);
-
-	(void)argc;
-
-
-	return (0);
-}
+	mfile = fopen(av[1], "r");
+	if (!mfile)
+	{
+		fprint(stderr, "Error: Can't open file %s\n", av[1]);
+		exit (EXIT_FAILURE);
+	}
