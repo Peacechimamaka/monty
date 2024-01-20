@@ -22,7 +22,7 @@ void i_push(stack_t **h, unsigned int count)
 
 	outcome =strtok(NULL, " \n\t");
 	
-	if (outcome == NULL || isdigit(*outcome == NULL))
+	if (!outcome || !isdigit(*outcome))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", count);
 		exit(EXIT_FAILURE);
@@ -44,7 +44,7 @@ void i_push(stack_t **h, unsigned int count)
 		n_node->next = *h;
 
 		(*h)->prev = n_node;
-		*h-> = n_node;
+		*h = n_node;
 	}
 	else
 	{
@@ -52,7 +52,7 @@ void i_push(stack_t **h, unsigned int count)
 		
 		if (!*h)
 		{
-			fprintf(stderr, "Error: malloc failed\n);
+			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
 
