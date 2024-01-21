@@ -14,7 +14,7 @@ void i_push(stack_t **h, unsigned int count)
 	int num;
 	char *outcome;
 
-	if (h == NULL || count == NULL)
+	if (!h || !count)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", count);
 		exit (EXIT_FAILURE);

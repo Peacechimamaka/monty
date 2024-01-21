@@ -39,5 +39,9 @@ typedef struct instruction_s
 void i_push(stack_t **h, unsigned int count);
 void i_pall(stack_t **h, unsigned int count);
 void i_pint(stack_t **h, unsigned int count);
+void i_swap(stack_t **h, unsigned int count);
+void i_pop(stack_t **h, unsigned int count);
+void i_add(stack_t **h, unsigned int count);
+void i_nop(stack_t **h, unsigned int count);
 
 #endif
