@@ -1,15 +1,15 @@
 #include "monty.h"
 
 /**
- *i_push - pushes an integer to the stack
+ * push - pushes an integer to the stack
  *
  * @h: a pointer to the first element of the stack
  *
- *@count: a counter to the line number
+ * @count: a counter to the line number
  *
- *Return: nothing
+ * Return: nothing
  */
-void i_push(stack_t **h, unsigned int count)
+void push(stack_t **h, unsigned int count)
 {
 	int num;
 	char *outcome;

@@ -1,24 +1,28 @@
 #include "monty.h"
 
 /**
- *i_pint - prints the first ints in the stack
+ *pint - prints the first ints in the stack
  *
  *@h: head
  *
- *@num: line count
+ *@count: line count
  *
- * Return: 0
+ * Return: Nothing
  */
+void pint(stack_t **h, unsigned int count)
+{
+        if (*h == NULL)
+        {
+                fprintf(stderr, "L<%u>: can't pint, stack empty", count);
+                exit(EXIT_FAILURE);
+        }
+        else
+        {
+                stack_t *temp;
 
-void i_pint(stack_t **h, unsigned int num)
-{
-if (*h == NULL)
-{
-fprintf(stderr, "L%u: can't pint, stack empty\n", num);
-exit (EXIT_FAILURE);
+                temp = *h;
+                printf("%d\n", temp->n);
+        }
 }
 
-else
 
-printf("%u\n", (*h)->n);
-}

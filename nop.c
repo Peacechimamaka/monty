@@ -1,17 +1,17 @@
 #include "monty.h"
 
 /**
- *i_pall - prints all the ints in the stack
+ *nop - prints all the ints in the stack
  *
  *@h: head
  *
- *@num: line count
+ *@count: line count
  *
- * Return: 0
+ * Return: Nothing
  */
 
-void i_pall(stack_t **h, unsigned int num)
+void nop(stack_t **h, unsigned int count)
 {
-        (void) num;
+        (void) count;
         (void) (*h);
 }

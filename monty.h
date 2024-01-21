@@ -36,12 +36,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void i_push(stack_t **h, unsigned int count);
-void i_pall(stack_t **h, unsigned int count);
-void i_pint(stack_t **h, unsigned int count);
-void i_swap(stack_t **h, unsigned int count);
-void i_pop(stack_t **h, unsigned int count);
-void i_add(stack_t **h, unsigned int count);
-void i_nop(stack_t **h, unsigned int count);
+void push(stack_t **h, unsigned int count);
+void pall(stack_t **h, unsigned int count);
+void pint(stack_t **h, unsigned int count);
+void swap(stack_t **h, unsigned int count);
+void pop(stack_t **h, unsigned int count);
+void add(stack_t **h, unsigned int count);
+void nop(stack_t **h, unsigned int count);
 
 #endif

@@ -1,13 +1,24 @@
-#include "monty"
+#include "monty.h"
 
-void swap(stack_t *n1, stack_t *n2)
+/**
+ * swap -  swaps the top two elements of the stack.
+ * @h: A pointer to the head of the stack.
+ * @count: Line number.
+ * Return: Nothing.
+ */
+
+
+void swap(stack_t **h, unsigned int count)
 {
-	n1->prev->next=n2;
-	n2->next->prev=n1;
-	n1->next=n2->next;
-	n2->prev=n1->prev;
-	n1->prev=n2;
-	n2->next=n1;
+	stack_t *temp = NULL;
+
+	temp = (*h)->next;
+	*h = temp;
+	temp = temp->prev;
+	temp->prev = *h;
+	temp->next = (*h)->next;
+	(*h)->next = temp;
+	(*h)->prev = NULL;
+
+	(void) count;
 }
-
-

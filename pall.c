@@ -1,24 +1,25 @@
 #include "monty.h"
 
 /**
- *i_pall - prints all the ints in the stack
+ * pall - prints all the ints in the stack
  *
- *@h: head
+ * @h: head
  *
- *@num: line count
+ * @count: line count
  *
  * Return: 0
  */
 
-void i_pall(stack_t **h, unsigned int num)
+void pall(stack_t **h, unsigned int count)
 {
-	(void) num;
-	while (*h)
+	stack_t *temp;
+
+	(void) count;
+
+	temp = *h;
+	while (*h != NULL)
 	{
 		printf("%d\n", (*h)->n);
-		*h = (*h)->next;
+		temp = temp->next;
 	}
-	
-	if (*h == NULL)
-		return;
 }

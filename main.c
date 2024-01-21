@@ -1,5 +1,6 @@
 #include "monty.h"
 
+
 /**
  *main - the function main for the stack
  *@ac: arguement count
@@ -9,7 +10,8 @@
 
 int main (int ac, char *av[])
 {
-	char *code, *input = NULL;
+	char *code;
+	char *input = NULL;
 	FILE *mfile;
 	stack_t *stack = NULL;
 	size_t size = 0;
@@ -23,36 +25,38 @@ int main (int ac, char *av[])
 	}
 
 	mfile = fopen(av[1], "r");
-	if (!mfile)
+	if (mfile == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		exit (EXIT_FAILURE);
 	}
 
-	while ((rd = getline(&input, &size, mfile)) != -1);
 
+	rd = getline(&input, &size, mfile);
+
+	while (rd != -1)
 	{
 		count++;
 		code = strtok(input, " \n\t");
 		if (code)
 		{
 			if (strcmp(code, "pint") == 0)
-				i_pint(&stack, count);
+				pint(&stack, count);
 			else if (strcmp(code, "push") == 0)
 			{
 				strtok(NULL, " \t\n");
-				i_push(&stack, count);
+				push(&stack, count);
 			}
 			else if (strcmp(code, "pall") == 0)
-				i_pall(&stack, count);
+				pall(&stack, count);
 			else if (strcmp(code, "pop") == 0)
-				i_pop(&stack, count);
+				pop(&stack, count);
 			else if (strcmp(code, "swap") == 0)
-				i_swap(&stack, count);
+				swap(&stack, count);
 			else if (strcmp(code, "add") == 0)
-				i_add(&stack, count);
+				add(&stack, count);
 			else if (strcmp(code, "nop") == 0)
-				i_nop(&stack, count);
+				nop(&stack, count);
 			else
 			{
 				fprintf(stderr, "L%d: unknown instruction %s\n", count, code);

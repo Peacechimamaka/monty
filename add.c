@@ -1,12 +1,21 @@
-#include "monty"
+#include "monty.h"
 
-int add(stack_t *n1, stack_t *n2)
+/**
+ * add - add elemnts
+ * @h: head
+ * @count: line number
+ * Return: Nothing
+ */
+
+void add(stack_t **h, unsigned int count)
 {
-	stack_t *newNode;
-	newNode = malloc(sizeof(newNode));
-	newNode->n = (n1->n) + (n2->n);
-	newNode->prev = NULL;
-	newNode->next = NULL;
+	stack_t *temp = NULL;
 
-	return (newNode->n);
+	temp = (*h)->next;
+	temp->n = temp->n + (*h)->n;
+	temp->prev = NULL;
+	free(*h);
+	*h = temp;
+
+	(void) count;
 }
