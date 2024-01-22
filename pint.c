@@ -9,7 +9,7 @@
  *
  * Return: Nothing
  */
-void pint(stack_t **h, unsigned int count)
+void i_pint(stack_t **h, unsigned int count)
 {
         if (*h == NULL)
         {

@@ -7,7 +7,7 @@
  * Return: Nothing
  */
 
-void add(stack_t **h, unsigned int count)
+void i_add(stack_t **h, unsigned int count)
 {
 	stack_t *temp = NULL;
 

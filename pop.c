@@ -9,13 +9,14 @@
  *
  * Return: 0
  */
-void pop(stack_t **h, unsigned int count)
+void i_pop(stack_t **h, unsigned int count)
 {
         stack_t *temp;
 
-        if (*h == NULL)
+        if (*h == NULL || h == NULL)
         {
                 fprintf(stderr, "L<%u>: can't pop an empty stack\n", count);
+		free(h);
                 exit(EXIT_FAILURE);
         }
         else

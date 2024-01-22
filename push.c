@@ -9,7 +9,7 @@
  *
  * Return: nothing
  */
-void push(stack_t **h, unsigned int count)
+void i_push(stack_t **h, unsigned int count)
 {
 	int num;
 	char *outcome;

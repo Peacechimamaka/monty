@@ -8,17 +8,18 @@
  */
 
 
-void swap(stack_t **h, unsigned int count)
+void i_swap(stack_t **h, unsigned int count)
 {
-	stack_t *temp = NULL;
+	int tmp;
+	int hold;
 
-	temp = (*h)->next;
-	*h = temp;
-	temp = temp->prev;
-	temp->prev = *h;
-	temp->next = (*h)->next;
-	(*h)->next = temp;
-	(*h)->prev = NULL;
-
-	(void) count;
+	if (!*h || !h || !(*h)->next)
+	{
+		fprintf(stderr, "L%u: cant swap, stack too short", count);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*h)->n;
+	hold = (*h)->next->n;
+	(*h)->n = hold;
+	(*h)->next->n = tmp;
 }

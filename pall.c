@@ -10,7 +10,7 @@
  * Return: 0
  */
 
-void pall(stack_t **h, unsigned int count)
+void i_pall(stack_t **h, unsigned int count)
 {
 	stack_t *temp;
 

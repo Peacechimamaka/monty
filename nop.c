@@ -10,7 +10,7 @@
  * Return: Nothing
  */
 
-void nop(stack_t **h, unsigned int count)
+void i_nop(stack_t **h, unsigned int count)
 {
         (void) count;
         (void) (*h);
