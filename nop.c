@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *nop - prints all the ints in the stack
+ *i_nop - prints all the ints in the stack
  *
  *@h: head
  *
@@ -12,6 +12,6 @@
 
 void i_nop(stack_t **h, unsigned int count)
 {
-        (void) count;
-        (void) (*h);
+	(void) count;
+	(void) (*h);
 }

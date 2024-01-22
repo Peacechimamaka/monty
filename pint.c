@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *pint - prints the first ints in the stack
+ *i_pint - prints the first ints in the stack
  *
  *@h: head
  *
@@ -11,18 +11,18 @@
  */
 void i_pint(stack_t **h, unsigned int count)
 {
-        if (*h == NULL)
-        {
-                fprintf(stderr, "L<%u>: can't pint, stack empty", count);
-                exit(EXIT_FAILURE);
-        }
-        else
-        {
-                stack_t *temp;
+	if (*h == NULL)
+	{
+		fprintf(stderr, "L<%u>: can't pint, stack empty", count);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		stack_t *temp;
 
-                temp = *h;
-                printf("%d\n", temp->n);
-        }
+		temp = *h;
+		printf("%d\n", temp->n);
+	}
 }
 
 

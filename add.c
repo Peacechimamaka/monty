@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add - add elemnts
+ * i_add - add elemnts
  * @h: head
  * @count: line number
  * Return: Nothing

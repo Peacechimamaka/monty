@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall - prints all the ints in the stack
+ * i_pall - prints all the ints in the stack
  *
  * @h: head
  *
